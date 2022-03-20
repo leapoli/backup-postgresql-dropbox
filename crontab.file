@@ -1,0 +1,1 @@
+0 */1 * * * python3 {PATH}/backup.py -H {DB_HOST} -U {DB_USER} -W {DB_PASSWORD} -d {DB_NAME} -t {DROPBOX_TOKEN} -c 

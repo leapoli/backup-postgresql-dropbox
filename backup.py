@@ -37,6 +37,9 @@ REFRESH_TOKEN_FILENAME = "refresh.token"
 APP_KEY_FILENAME = "app.key"
 APP_SECRET_FILENAME = "app.secret"
 
+if args.db_name is None:
+    print("Database name cannot be missing.", file=stderr)
+    exit(1)
 
 if not exists(args.output_folder):
     if args.verbose:

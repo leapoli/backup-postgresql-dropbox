@@ -22,7 +22,7 @@ parser.add_argument('-c', help="Compress with zip", action="store_true", dest="c
 parser.add_argument('-dk', help="Dropbox App Key", action="store", dest="dropbox_key")
 parser.add_argument('-ds', help="Dropbox App Secret", action="store", dest="dropbox_secret")
 parser.add_argument('-rf', help="Remove non-compressed dump file", action="store_true", dest="remove_non_compressed")
-parser.add_argument('-gt', help="Starts the process of refresh token generation. Execute it before running backup process", action="store_true", dest="get_refresh_token")
+parser.add_argument('-gt', help="Starts the process of refreshing token generation. Executes it before running backup process", action="store_true", dest="get_refresh_token")
 args = parser.parse_args()
 
 account_id = None

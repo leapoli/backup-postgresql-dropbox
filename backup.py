@@ -60,7 +60,7 @@ if args.get_refresh_token:
         exit(1)
     auth_flow = DropboxOAuth2FlowNoRedirect(dropbox_key, dropbox_secret, token_access_type="offline")
     authorize_url = auth_flow.start()
-    print("Prior to obtain the refresh token, is necessary to input the authorization code. Follow these steps:")
+    print("Prior to obtain the refresh token, it is necessary to input the authorization code. Follow these steps:")
     print("1. Go to: " + authorize_url)
     print("2. Click \"Allow\" (you might have to log in first).")
     print("3. Copy the authorization code.")

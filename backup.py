@@ -1,5 +1,5 @@
 from locale import setlocale, LC_ALL
-from os import makedirs, popen
+from os import makedirs, popen, getcwd
 from os.path import join as path_join, exists
 from sys import exit, stderr
 from traceback import format_exc
@@ -33,9 +33,9 @@ app_key = None
 app_secret = None
 expires_at = None
 
-REFRESH_TOKEN_FILENAME = "refresh.token"
-APP_KEY_FILENAME = "app.key"
-APP_SECRET_FILENAME = "app.secret"
+REFRESH_TOKEN_FILENAME = path_join(getcwd(), "refresh.token")
+APP_KEY_FILENAME = path_join(getcwd(), "app.key")
+APP_SECRET_FILENAME = path_join(getcwd(), "app.secret")
 
 if args.db_name is None:
     print("Database name cannot be missing.", file=stderr)

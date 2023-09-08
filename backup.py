@@ -1,10 +1,11 @@
 from locale import setlocale, LC_ALL
-from os import makedirs, popen, getcwd
+from os import makedirs, popen
 from os.path import join as path_join, exists
 from sys import exit, stderr
 from traceback import format_exc
 from argparse import ArgumentParser
 from gzip import open as gzip_open
+from pathlib import Path
 
 from dropbox.files import WriteMode
 from dropbox import DropboxOAuth2FlowNoRedirect, Dropbox
@@ -33,9 +34,9 @@ app_key = None
 app_secret = None
 expires_at = None
 
-REFRESH_TOKEN_FILENAME = path_join(getcwd(), "refresh.token")
-APP_KEY_FILENAME = path_join(getcwd(), "app.key")
-APP_SECRET_FILENAME = path_join(getcwd(), "app.secret")
+REFRESH_TOKEN_FILENAME = path_join(Path(__file__).parent.absolute(), "refresh.token")
+APP_KEY_FILENAME = path_join(Path(__file__).parent.absolute(), "app.key")
+APP_SECRET_FILENAME = path_join(Path(__file__).parent.absolute(), "app.secret")
 
 if args.db_name is None:
     print("Database name cannot be missing.", file=stderr)
